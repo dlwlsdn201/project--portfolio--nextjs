@@ -3,6 +3,10 @@ const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	lessLoaderOptions: {
+		javascriptEnabled: true
+	},
+	transpilePackages: ['antd'],
 	images: {
 		formats: ['image/avif', 'image/webp'],
 		// Twitter Profile Picture
@@ -19,7 +23,7 @@ const nextConfig = {
 		swcFileReading: true,
 		swcPlugins: ['plugin', {}]
 	},
-	webpack5: false,
+	webpack5: true,
 	webpack: (config) => {
 		config.module.rules.push({
 			test: /\.js$/,

@@ -1,17 +1,74 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faBlog, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+	faBlog,
+	faBriefcase,
+	faCode,
+	faEnvelope,
+	faUser
+} from '@fortawesome/free-solid-svg-icons';
+
+const customStyle = {
+	icon: {
+		home: {
+			width: '1.2em'
+		},
+		about: { width: '1.3em' }
+	}
+};
+
+export function SkillStackIcon() {
+	return (
+		<FontAwesomeIcon
+			icon={faCode}
+			style={{ width: customStyle.icon.about.width }}
+		/>
+	);
+}
+
+export function UserInfoIcon() {
+	return (
+		<FontAwesomeIcon
+			icon={faUser}
+			style={{ width: customStyle.icon.about.width }}
+		/>
+	);
+}
+
+export function CareerInfoIcon() {
+	return (
+		<FontAwesomeIcon
+			icon={faBriefcase}
+			style={{ width: customStyle.icon.about.width }}
+		/>
+	);
+}
 
 export function InstagramIcon() {
-	return <FontAwesomeIcon icon={faInstagram} style={{ width: '1.2rem' }} />;
+	return (
+		<FontAwesomeIcon
+			icon={faInstagram}
+			style={{ width: customStyle.icon.home.width }}
+		/>
+	);
 }
 
 export function VelogIcon() {
-	return <FontAwesomeIcon icon={faBlog} style={{ width: '1.2rem' }} />;
+	return (
+		<FontAwesomeIcon
+			icon={faBlog}
+			style={{ width: customStyle.icon.home.width }}
+		/>
+	);
 }
 
 export function EmailIcon() {
-	return <FontAwesomeIcon icon={faEnvelope} style={{ width: '1.2rem' }} />;
+	return (
+		<FontAwesomeIcon
+			icon={faEnvelope}
+			style={{ width: customStyle.icon.home.width }}
+		/>
+	);
 }
 
 export function TwitterIcon() {

@@ -1,6 +1,6 @@
 import me from '../app/avatar.jpg';
 
-export const name = '이 진 우';
+export const name = '2년차 주니어 프론트엔드 개발자';
 export const avatar = me;
 export const about = () => {
 	return (
