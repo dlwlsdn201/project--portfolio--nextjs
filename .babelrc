@@ -1,3 +1,0 @@
-{
-  "plugins": ["macros","@babel/helper-module-imports"]
-}
