@@ -1,5 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+	faCss3,
+	faHtml5,
+	faInstagram,
+	faJs,
+	faReact
+} from '@fortawesome/free-brands-svg-icons';
 import {
 	faBlog,
 	faBriefcase,
@@ -13,38 +19,53 @@ const customStyle = {
 		home: {
 			width: '1.2em'
 		},
-		about: { width: '1.3em' }
+		about: {
+			badge: { width: '1.3em' }
+		}
 	}
 };
 
-export function SkillStackIcon() {
+export function HTML5Icon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faHtml5} size='2xl' />;
+}
+export function CSS3Icon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faCss3} size='2xl' />;
+}
+export function JSIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faJs} size='2xl' />;
+}
+export function REACTIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faReact} size='2xl' />;
+}
+
+export function SkillStackIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faCode}
-			style={{ width: customStyle.icon.about.width }}
+			style={{ width: customStyle.icon.about.badge.width }}
 		/>
 	);
 }
 
-export function UserInfoIcon() {
+export function UserInfoIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faUser}
-			style={{ width: customStyle.icon.about.width }}
+			style={{ width: customStyle.icon.about.badge.width }}
 		/>
 	);
 }
 
-export function CareerInfoIcon() {
+export function CareerInfoIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faBriefcase}
-			style={{ width: customStyle.icon.about.width }}
+			style={{ width: customStyle.icon.about.badge.width }}
 		/>
 	);
 }
 
-export function InstagramIcon() {
+export function InstagramIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faInstagram}
@@ -53,7 +74,7 @@ export function InstagramIcon() {
 	);
 }
 
-export function VelogIcon() {
+export function VelogIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faBlog}
@@ -62,7 +83,7 @@ export function VelogIcon() {
 	);
 }
 
-export function EmailIcon() {
+export function EmailIcon(): React.ReactElement {
 	return (
 		<FontAwesomeIcon
 			icon={faEnvelope}

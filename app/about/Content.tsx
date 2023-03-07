@@ -1,7 +1,15 @@
 'use client'; // 이 구문은 해당 컴포넌트 파일을 클라이언트 쪽에서 렌더링함
 
-import { CircularProgress } from '@mui/material';
-import { CareerInfoIcon, SkillStackIcon, UserInfoIcon } from 'components/icons';
+import { Box, CircularProgress, Grid } from '@mui/material';
+import {
+	CareerInfoIcon,
+	CSS3Icon,
+	HTML5Icon,
+	JSIcon,
+	REACTIcon,
+	SkillStackIcon,
+	UserInfoIcon
+} from 'components/icons';
 import CircularStatic from 'modules/Progress';
 import React from 'react';
 
@@ -86,26 +94,64 @@ const data: Array<TDataObj> = [
 		items: [
 			{
 				label: 'HTML5',
-				content: <CircularStatic value={80} />
+				content: <CircularStatic icon={HTML5Icon()} value={80} />
 			},
 			{
 				label: 'CSS3',
-				content: <CircularStatic value={40} />
+				content: <CircularStatic icon={CSS3Icon()} value={65} />
+			},
+			{
+				label: 'JavaScript',
+				content: <CircularStatic icon={JSIcon()} value={75} />
+			},
+			{
+				label: 'React',
+				content: <CircularStatic icon={REACTIcon()} value={75} />
 			}
 		]
 	}
 ];
 
+// <div className='grid grid-cols-auto grid-flow-col auto-cols-fr gap-2 px-3.5 py-2'>
 const skillsGrid = (dataObj) => (
-	<div className='grid grid-cols-auto grid-flow-col auto-cols-fr gap-2 px-3.5 py-2'>
-		{dataObj.items.map((item) => (
-			<div className='flex flex-col item-center justify-center'>
-				<span>{item.content}</span>
-				<span>{item.label}</span>
-			</div>
-		))}
-	</div>
+	<Box
+		sx={{
+			position: 'relative',
+			flexGrow: 1,
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center'
+		}}>
+		<Grid
+			container
+			spacing={{ xs: 4, md: 3 }}
+			columns={{ xs: 1, sm: 1, md: 4, lg: 4 }}>
+			{dataObj.items.map((item, index) => (
+				<Grid
+					item
+					xs={1}
+					sm={1}
+					md={1}
+					lg={1}
+					key={index}
+					style={{
+						display: 'flex',
+						flexFlow: 'nowrap column',
+						justifyContent: 'center',
+						alignItems: 'center'
+					}}>
+					<span>{item.content}</span>
+					<span>{item.label}</span>
+				</Grid>
+				// <div className='flex flex-col item-center justify-center'>
+				// </div>
+			))}
+		</Grid>
+	</Box>
 );
+{
+	/* </div> */
+}
 
 const commonGrid = (dataObj) =>
 	dataObj.items.map((item) => (
@@ -118,7 +164,7 @@ const commonGrid = (dataObj) =>
 	));
 
 const container = (data: TDataObj) => (
-	<div className=' relative  border-2 border-grey px-1 py-4'>
+	<div className=' relative border-2 border-grey px-2 py-4'>
 		{data.type !== 'skills' ? commonGrid(data) : skillsGrid(data)}
 		<div
 			className='title absolute left-2 -top-3 px-1.5'
