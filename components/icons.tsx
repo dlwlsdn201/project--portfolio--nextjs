@@ -1,10 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+	faBitbucket,
 	faCss3,
+	faFigma,
+	faGithub,
 	faHtml5,
 	faInstagram,
 	faJs,
-	faReact
+	faPython,
+	faReact,
+	faSass
 } from '@fortawesome/free-brands-svg-icons';
 import {
 	faBlog,
@@ -31,11 +36,26 @@ export function HTML5Icon(): React.ReactElement {
 export function CSS3Icon(): React.ReactElement {
 	return <FontAwesomeIcon icon={faCss3} size='2xl' />;
 }
+export function SASSIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faSass} size='2xl' />;
+}
 export function JSIcon(): React.ReactElement {
 	return <FontAwesomeIcon icon={faJs} size='2xl' />;
 }
+export function PythonIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faPython} size='2xl' />;
+}
 export function REACTIcon(): React.ReactElement {
 	return <FontAwesomeIcon icon={faReact} size='2xl' />;
+}
+export function FigmaIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faFigma} size='2xl' />;
+}
+export function BitbucketIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faBitbucket} size='2xl' />;
+}
+export function GithubIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faGithub} size='2xl' />;
 }
 
 export function SkillStackIcon(): React.ReactElement {

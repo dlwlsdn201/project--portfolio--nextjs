@@ -2,11 +2,16 @@
 
 import { Box, CircularProgress, Grid } from '@mui/material';
 import {
+	BitbucketIcon,
 	CareerInfoIcon,
 	CSS3Icon,
+	FigmaIcon,
+	GithubIcon,
 	HTML5Icon,
 	JSIcon,
+	PythonIcon,
 	REACTIcon,
+	SASSIcon,
 	SkillStackIcon,
 	UserInfoIcon
 } from 'components/icons';
@@ -98,7 +103,11 @@ const data: Array<TDataObj> = [
 			},
 			{
 				label: 'CSS3',
-				content: <CircularStatic icon={CSS3Icon()} value={65} />
+				content: <CircularStatic icon={CSS3Icon()} value={70} />
+			},
+			{
+				label: 'SASS',
+				content: <CircularStatic icon={SASSIcon()} value={70} />
 			},
 			{
 				label: 'JavaScript',
@@ -106,7 +115,23 @@ const data: Array<TDataObj> = [
 			},
 			{
 				label: 'React',
-				content: <CircularStatic icon={REACTIcon()} value={75} />
+				content: <CircularStatic icon={REACTIcon()} value={65} />
+			},
+			{
+				label: 'Figma',
+				content: <CircularStatic icon={FigmaIcon()} value={45} />
+			},
+			{
+				label: 'Python',
+				content: <CircularStatic icon={PythonIcon()} value={35} />
+			},
+			{
+				label: 'Bitbucket',
+				content: <CircularStatic icon={BitbucketIcon()} value={70} />
+			},
+			{
+				label: 'Github',
+				content: <CircularStatic icon={GithubIcon()} value={70} />
 			}
 		]
 	}
@@ -125,7 +150,7 @@ const skillsGrid = (dataObj) => (
 		<Grid
 			container
 			spacing={{ xs: 4, md: 3 }}
-			columns={{ xs: 1, sm: 1, md: 4, lg: 4 }}>
+			columns={{ xs: 1, sm: 2, md: 4, lg: 4 }}>
 			{dataObj.items.map((item, index) => (
 				<Grid
 					item
