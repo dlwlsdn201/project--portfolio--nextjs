@@ -7,7 +7,7 @@ const cache = createEmotionCache();
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<CacheProvider value={cache}>
+		<CacheProvider value={cashe}>
 			<CssBaseline />
 			<Component {...pageProps} />
 		</CacheProvider>

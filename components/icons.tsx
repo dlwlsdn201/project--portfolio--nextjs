@@ -1,7 +1,4 @@
-import {
-	FontAwesomeIcon,
-	FontAwesomeIconProps
-} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBitbucket,
 	faCss3,
@@ -21,8 +18,6 @@ import {
 	faEnvelope,
 	faUser
 } from '@fortawesome/free-solid-svg-icons';
-import { SiTypescript } from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
 
 const customStyle = {
 	icon: {
@@ -35,75 +30,32 @@ const customStyle = {
 	}
 };
 
-export function HTML5Icon(customOptions?): React.ReactElement {
-	return (
-		<FontAwesomeIcon
-			icon={faHtml5}
-			color='#F15120'
-			size={'2xl'}
-			{...customOptions}
-		/>
-	);
+export function HTML5Icon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faHtml5} size='2xl' />;
 }
-export function CSS3Icon(customOptions?): React.ReactElement {
-	return (
-		<FontAwesomeIcon
-			icon={faCss3}
-			size={'2xl'}
-			color='#3391C9'
-			{...customOptions}
-		/>
-	);
+export function CSS3Icon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faCss3} size='2xl' />;
 }
-export function SASSIcon(customOptions?): React.ReactElement {
-	return (
-		<FontAwesomeIcon
-			icon={faSass}
-			size={'2xl'}
-			color='#C35D91'
-			{...customOptions}
-		/>
-	);
+export function SASSIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faSass} size='2xl' />;
 }
-export function JSIcon(customOptions?): React.ReactElement {
-	return (
-		<FontAwesomeIcon
-			icon={faJs}
-			size={'2xl'}
-			color='#E9D11A'
-			{...customOptions}
-		/>
-	);
+export function JSIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faJs} size='2xl' />;
 }
-export function TSIcon(customOptions?): React.ReactElement {
-	return <SiTypescript color='0172c1' size='2em' {...customOptions} />;
+export function PythonIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faPython} size='2xl' />;
 }
-export function PythonIcon(customOptions?): React.ReactElement {
-	return <FontAwesomeIcon icon={faPython} size={'2xl'} {...customOptions} />;
+export function REACTIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faReact} size='2xl' />;
 }
-export function REACTIcon(customOptions?): React.ReactElement {
-	return (
-		<FontAwesomeIcon
-			icon={faReact}
-			size={'2xl'}
-			color='#61DBFB'
-			{...customOptions}
-		/>
-	);
+export function FigmaIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faFigma} size='2xl' />;
 }
-export function NextJSIcon(customOptions?): React.ReactElement {
-	return <TbBrandNextjs size='2em' color='#000000' {...customOptions} />;
+export function BitbucketIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faBitbucket} size='2xl' />;
 }
-export function FigmaIcon(customOptions?): React.ReactElement {
-	return <FontAwesomeIcon icon={faFigma} size={'2xl'} {...customOptions} />;
-}
-export function BitbucketIcon(customOptions?): React.ReactElement {
-	return <FontAwesomeIcon icon={faBitbucket} size={'2xl'} {...customOptions} />;
-}
-export function GithubIcon(
-	customOptions?: FontAwesomeIconProps
-): React.ReactElement {
-	return <FontAwesomeIcon icon={faGithub} size={'2xl'} {...customOptions} />;
+export function GithubIcon(): React.ReactElement {
+	return <FontAwesomeIcon icon={faGithub} size='2xl' />;
 }
 
 export function SkillStackIcon(): React.ReactElement {
