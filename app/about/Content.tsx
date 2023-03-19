@@ -2,6 +2,7 @@
 
 import { Box, CircularProgress, Grid } from '@mui/material';
 import {
+	AntdIcon,
 	BitbucketIcon,
 	CareerInfoIcon,
 	CSS3Icon,
@@ -99,39 +100,59 @@ const data: Array<TDataObj> = [
 		items: [
 			{
 				label: 'HTML5',
-				content: <CircularStatic icon={HTML5Icon()} value={80} />
+				content: <CircularStatic icon={HTML5Icon()} label='HTML5' value={65} />
 			},
 			{
 				label: 'CSS3',
-				content: <CircularStatic icon={CSS3Icon()} value={70} />
+				content: <CircularStatic icon={CSS3Icon()} label='CSS3' value={60} />
 			},
 			{
 				label: 'SASS',
-				content: <CircularStatic icon={SASSIcon()} value={70} />
+				content: <CircularStatic icon={SASSIcon()} label='SASS' value={60} />
+			},
+			{
+				label: 'Ant Design',
+				content: (
+					<CircularStatic icon={AntdIcon()} label='Ant Design' value={70} />
+				)
+			},
+			{
+				label: 'Material UI',
+				content: (
+					<CircularStatic icon={AntdIcon()} label='Material UI' value={45} />
+				)
 			},
 			{
 				label: 'JavaScript',
-				content: <CircularStatic icon={JSIcon()} value={75} />
+				content: (
+					<CircularStatic icon={JSIcon()} label='JavaScript' value={60} />
+				)
 			},
 			{
 				label: 'React',
-				content: <CircularStatic icon={REACTIcon()} value={65} />
+				content: <CircularStatic icon={REACTIcon()} label='React' value={65} />
 			},
 			{
 				label: 'Figma',
-				content: <CircularStatic icon={FigmaIcon()} value={45} />
+				content: <CircularStatic icon={FigmaIcon()} label='Figma' value={45} />
 			},
 			{
 				label: 'Python',
-				content: <CircularStatic icon={PythonIcon()} value={35} />
+				content: (
+					<CircularStatic icon={PythonIcon()} label='Python' value={35} />
+				)
 			},
 			{
 				label: 'Bitbucket',
-				content: <CircularStatic icon={BitbucketIcon()} value={70} />
+				content: (
+					<CircularStatic icon={BitbucketIcon()} label='Bitbucket' value={60} />
+				)
 			},
 			{
 				label: 'Github',
-				content: <CircularStatic icon={GithubIcon()} value={70} />
+				content: (
+					<CircularStatic icon={GithubIcon()} label='Github' value={60} />
+				)
 			}
 		]
 	}
@@ -166,10 +187,8 @@ const skillsGrid = (dataObj) => (
 						alignItems: 'center'
 					}}>
 					<span>{item.content}</span>
-					<span>{item.label}</span>
+					{/* <span>{item.label}</span> */}
 				</Grid>
-				// <div className='flex flex-col item-center justify-center'>
-				// </div>
 			))}
 		</Grid>
 	</Box>

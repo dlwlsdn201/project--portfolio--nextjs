@@ -21,7 +21,7 @@ import {
 	faEnvelope,
 	faUser
 } from '@fortawesome/free-solid-svg-icons';
-import { SiTypescript } from 'react-icons/si';
+import { SiTypescript, SiAntdesign } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 
 const customStyle = {
@@ -75,6 +75,14 @@ export function JSIcon(customOptions?): React.ReactElement {
 		/>
 	);
 }
+export function MuiIcon(customOptions?): React.ReactElement {
+	return <MuiIcon color='007FFF' size='2em' {...customOptions} />;
+}
+
+export function AntdIcon(customOptions?): React.ReactElement {
+	return <SiAntdesign color='0E6EFF' size='2em' {...customOptions} />;
+}
+
 export function TSIcon(customOptions?): React.ReactElement {
 	return <SiTypescript color='0172c1' size='2em' {...customOptions} />;
 }
@@ -98,7 +106,14 @@ export function FigmaIcon(customOptions?): React.ReactElement {
 	return <FontAwesomeIcon icon={faFigma} size={'2xl'} {...customOptions} />;
 }
 export function BitbucketIcon(customOptions?): React.ReactElement {
-	return <FontAwesomeIcon icon={faBitbucket} size={'2xl'} {...customOptions} />;
+	return (
+		<FontAwesomeIcon
+			icon={faBitbucket}
+			color='#4388F1'
+			size={'2xl'}
+			{...customOptions}
+		/>
+	);
 }
 export function GithubIcon(
 	customOptions?: FontAwesomeIconProps

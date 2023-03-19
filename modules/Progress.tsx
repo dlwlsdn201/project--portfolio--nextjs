@@ -6,12 +6,16 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 function CircularProgressWithLabel(
-	props: CircularProgressProps & { value: number; icon: React.ReactElement }
+	props: CircularProgressProps & {
+		value: number;
+		label: string;
+		icon: React.ReactElement;
+	}
 ) {
 	const getColor = (value: number) => {
 		if (value <= 30) return 'error';
-		else if (value <= 65) return 'warning';
-		else if (value <= 90) return 'success';
+		else if (value <= 60) return 'warning';
+		else if (value <= 85) return 'success';
 		else if (value <= 100) return 'primary';
 	};
 
@@ -41,7 +45,10 @@ function CircularProgressWithLabel(
 					variant='caption'
 					component='div'
 					fontSize='0.5em'
-					color='white'>{`${Math.round(props.value)}%`}</Typography>
+					color='white'>
+					{/* {`${Math.round(props.value)}%`} */}
+					{props?.label}
+				</Typography>
 			</Box>
 		</Box>
 	);
@@ -49,6 +56,7 @@ function CircularProgressWithLabel(
 
 export default function CircularStatic(props: {
 	value: number;
+	label: string;
 	icon: React.ReactElement;
 }) {
 	// const [progress, setProgress] = React.useState(10);
@@ -64,5 +72,11 @@ export default function CircularStatic(props: {
 	// 	};
 	// }, []);
 
-	return <CircularProgressWithLabel icon={props.icon} value={props.value} />;
+	return (
+		<CircularProgressWithLabel
+			icon={props.icon}
+			label={props.label}
+			value={props.value}
+		/>
+	);
 }

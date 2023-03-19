@@ -55,6 +55,7 @@ export default function ModuleCard({
 					<Typography
 						variant='h6'
 						style={{
+							fontSize: '1.1em',
 							maxWidth: '100%',
 							whiteSpace: 'nowrap',
 							wordBreak: 'keep-all',
