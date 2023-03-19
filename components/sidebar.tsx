@@ -18,12 +18,12 @@ const navItems = {
 		y: 35,
 		w: '65px'
 	},
-	'/blog': {
-		name: 'blog',
-		x: 127,
-		y: 69,
-		w: '56px'
-	},
+	// '/blog': {
+	// 	name: 'blog',
+	// 	x: 127,
+	// 	y: 69,
+	// 	w: '56px'
+	// },
 	'/projects': {
 		name: 'Projects',
 		x: 182,
@@ -34,7 +34,7 @@ const navItems = {
 
 function Logo() {
 	return (
-		<Link aria-label='LeeJinWoo's Portfolio' href='/'>
+		<Link aria-label="LeeJinWoo's Portfolio" href='/'>
 			<motion.svg
 				className='text-black dark:text-white h-[25px] md:h-[37px]'
 				width='25'
