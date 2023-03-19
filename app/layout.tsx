@@ -15,15 +15,15 @@ const kaisei = localFont({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'LeeJinWoo's Portfolio',
-		template: '%s | LeeJinWoo's Portfolio'
+		default: "LeeJinWoo's Portfolio",
+		template: "%s | LeeJinWoo's Portfolio"
 	},
 	description: 'Developer, writer, and creator.',
 	openGraph: {
-		title: 'LeeJinWoo's Portfolio',
+		title: "LeeJinWoo's Portfolio",
 		description: 'Developer, writer, and creator.',
 		url: 'https://leerob.io',
-		siteName: 'LeeJinWoo's Portfolio',
+		siteName: "LeeJinWoo's Portfolio",
 		images: [
 			{
 				url: 'https://leerob.io/og.jpg',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 		}
 	},
 	twitter: {
-		title: 'LeeJinWoo's Portfolio',
+		title: "LeeJinWoo's Portfolio",
 		card: 'summary_large_image'
 	},
 	icons: {
