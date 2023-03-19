@@ -34,7 +34,7 @@ const navItems = {
 
 function Logo() {
 	return (
-		<Link aria-label='Lee Robinson' href='/'>
+		<Link aria-label='Lee Jin Woo' href='/'>
 			<motion.svg
 				className='text-black dark:text-white h-[25px] md:h-[37px]'
 				width='25'
