@@ -1,3 +1,6 @@
+// import '../styles/styles.css';
+// import '../styles/global.css';
+
 import type { AppProps } from 'next/app';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';

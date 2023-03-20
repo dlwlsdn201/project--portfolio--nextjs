@@ -1,11 +1,13 @@
 const { get } = require('@vercel/edge-config');
 const { withContentlayer } = require('next-contentlayer');
+// const path = require('path');
+// const glob = require('glob');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	lessLoaderOptions: {
-		javascriptEnabled: true
-	},
+	// lessLoaderOptions: {
+	// 	javascriptEnabled: true
+	// },
 	transpilePackages: ['antd'],
 	images: {
 		formats: ['image/avif', 'image/webp'],

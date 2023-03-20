@@ -1,7 +1,8 @@
 body {
-  border: 10px solid red;
+  /* border: 10px solid red; */
 }
 
 .MuiPaper-root {
+  border: 2px solid red !important;
   cursor: pointer !important;
 }

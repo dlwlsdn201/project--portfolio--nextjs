@@ -22,7 +22,11 @@
     "paths": {
       "contentlayer/generated": [
         "./.contentlayer/generated"
-      ]
+      ],
+      "@styles": ["styles/*"],
+      "@pages": ["pages/*"],
+      "@components": ["components/*"],
+      "@": ["/*"]
     },
     "incremental": true,
     "plugins": [

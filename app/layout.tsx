@@ -1,4 +1,5 @@
-import './global.css';
+import '../styles/styles.css';
+// import '../styles/global.css';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
