@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
 
 ::selection {
   background-color: #47a3f3;
@@ -9,7 +10,75 @@
 
 html {
   min-width: 360px;
+  height: -webkit-fill-available;
 }
+
+body {
+  border: 0.1px solid black;
+  height: 100%;
+  width: 100%;
+  background-image: url('../static/images/project-background2.jpeg');
+  background-size: contain;
+  -webkit-animation: slidein 70s;
+  animation: slidein 70s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: 0% 100%;
+    background-size: 2800px;
+  }
+
+  to {
+    background-position: right;
+    background-size: 2800px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: 0% 100%;
+    background-size: 2800px;
+  }
+
+  to {
+    background-position: right;
+    background-size: 2800px;
+  }
+
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+}
+
+/* .center h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  text-transform: uppercase;
+} */
+
+
 
 
 .prose .anchor {
