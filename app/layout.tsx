@@ -71,12 +71,14 @@ export default function RootLayout({
 				'text-black bg-white dark:text-white dark:bg-[#111010]',
 				kaisei.variable
 			)}>
-			<body className='antialiased max-w-6xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto'>
-				<Sidebar />
+			<body >
+        <div className="root-container antialiased max-w-6xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+        <Sidebar />
 				<main className='flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0'>
 					{children}
 					<AnalyticsWrapper />
 				</main>
+      </div>
 			</body>
 		</html>
 	);
