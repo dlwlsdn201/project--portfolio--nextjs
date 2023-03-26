@@ -1,6 +1,3 @@
-// import '../styles/styles.css';
-// import '../styles/global.css';
-
 import type { AppProps } from 'next/app';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
@@ -9,10 +6,10 @@ import createEmotionCache from '../createEmotionCache';
 const cache = createEmotionCache();
 
 export default function App({ Component, pageProps }: AppProps) {
-	return (
-		<CacheProvider value={cache}>
-			<CssBaseline />
-			<Component {...pageProps} />
-		</CacheProvider>
-	);
+  return (
+    <CacheProvider value={cache}>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </CacheProvider>
+  );
 }

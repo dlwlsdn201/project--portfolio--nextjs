@@ -26,9 +26,9 @@ const navItems = {
 	// },
 	'/projects': {
 		name: 'Projects',
-		x: 182,
-		y: 104,
-		w: '100px'
+		x: 64,
+		y: 69,
+		w: '100%'
 	}
 };
 
@@ -78,9 +78,6 @@ function Logo() {
 
 export default function Navbar() {
 	let pathname = usePathname() || '/';
-	if (pathname.includes('/blog/')) {
-		pathname = '/blog';
-	}
 
 	return (
 		<aside className='md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif'>
@@ -103,7 +100,8 @@ export default function Navbar() {
 										animate={{
 											opacity: 1,
 											y: navItems[pathname].y,
-											width: navItems[pathname].w
+											// width: navItems[pathname].w
+                      width: '60%'
 										}}
 										transition={{
 											type: 'spring',
@@ -143,7 +141,7 @@ export default function Navbar() {
 									className={clsx(
 										'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 py-[5px] px-[10px]',
 										{
-											'text-neutral-500': !isActive,
+											'text-black': !isActive,
 											'font-bold': isActive
 										}
 									)}>
