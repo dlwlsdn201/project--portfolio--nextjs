@@ -1,0 +1,18 @@
+
+.section-home div a {
+  transition: all 250ms ease-in;
+}
+
+.section-home div a:hover {
+  transform: scale(1) translateX(15px);
+}
+
+@keyframes custom_scale {
+  from {
+    transform: scale(0);
+  } 
+  to {
+    transform: scale(1);
+    
+  }
+}
