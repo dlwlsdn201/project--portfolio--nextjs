@@ -3,6 +3,14 @@ body {
 }
 
 .MuiPaper-root {
-  border: 2px solid red !important;
+  /* border: 2px solid red !important; */
+  height: 100%;
   cursor: pointer !important;
+  transform: scale(1);
+  transition: all 0.3s linear;
 }
+
+.MuiPaper-root:hover {
+  transform: scale(1.1)
+}
+

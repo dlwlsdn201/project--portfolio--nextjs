@@ -62,7 +62,9 @@ section {
 }
 
 .root-container {
-  max-height: --webkit-fill-available;
+  height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
+  overflow-y: hidden;
 }
 
 .center {
@@ -78,14 +80,6 @@ section {
   background: rgba(75, 75, 250, 0.3);
   border-radius: 3px;
 }
-
-/* .center h1 {
-  text-align: center;
-  color: white;
-  font-family: 'Source Code Pro', monospace;
-  text-transform: uppercase;
-} */
-
 
 
 
