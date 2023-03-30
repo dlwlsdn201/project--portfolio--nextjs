@@ -9,7 +9,7 @@ export const revalidate = 60;
 export default async function HomePage() {
   return (
     <section className="section-home">
-      <h1 className="font-serif text-3xl font-bold">{name}</h1>
+      <strong className="font-serif text-lg font-bold md:text-3xl">{name}</strong>
       <div className="my-5 max-w-[570px] text-neutral-800 dark:text-neutral-200">{about()}</div>
       <div className="my-8 flex flex-col items-start md:flex-row md:items-center">
         <Image alt={name} className="rounded-full" src={avatar} placeholder="blur" width={100} priority />
