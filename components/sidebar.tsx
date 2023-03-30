@@ -81,7 +81,7 @@ export default function Navbar() {
   let pathname = usePathname() || '/';
 
   return (
-    <aside className="-mx-4 h-[100%] font-serif md:mx-0 md:w-[150px] md:flex-shrink-0 md:px-0">
+    <aside className="-mx-4 flex font-serif md:mx-0 md:h-[100%] md:w-[150px] md:flex-shrink-0 md:px-0">
       <div className="lg:sticky lg:top-20">
         <div className="ml-2 mb-2 flex flex-col items-start space-y-10 px-4 md:ml-[12px] md:mb-8 md:flex-row md:px-0 ">
           <Logo />
