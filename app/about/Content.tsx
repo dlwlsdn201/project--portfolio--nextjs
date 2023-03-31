@@ -208,12 +208,12 @@ const Content = () => {
   return (
     <div className="space-y-8 overflow-y-auto">
       {data.map((dataObj: TDataObj) => container(dataObj))}
-      <div>
+      {/* <div>
         <div className="scroll-more-info">
           <span></span>
           <strong>Scroll</strong>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

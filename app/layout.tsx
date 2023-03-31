@@ -57,13 +57,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={clsx('bg-white text-black dark:bg-[#111010] dark:text-white', kaisei.variable)}>
       <body>
-        <div className="root-container bg mx-4 mb-12 mt-12 flex max-w-6xl flex-col bg-slate-900/[0.4] px-[5%] py-[3%] antialiased md:mt-20 md:flex-row lg:mx-auto lg:my-16">
+        <div className="root-container bg mx-4 mb-12 mt-12 flex max-w-6xl flex-col bg-slate-900/[0.4] pb-[5%] antialiased md:mt-20 md:flex-row lg:mx-auto lg:my-16">
           <Sidebar />
-          <main className="h-max-[100%] mt-6 flex h-[100%] min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
+          <main className="h-max-[100%] mt-6 flex h-[100%] min-w-0 flex-auto flex-col px-[5%] md:mt-0 md:px-0">
             {children}
             {/* <AnalyticsWrapper /> */}
           </main>
@@ -71,4 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
