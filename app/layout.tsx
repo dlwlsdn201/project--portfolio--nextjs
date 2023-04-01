@@ -63,7 +63,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <div className="root-container bg md:mt-20 md:flex-row lg:mx-auto lg:my-16 mx-4 mb-12 mt-12 flex max-w-6xl flex-col bg-slate-900/[0.4] pb-[5%] antialiased tablet:mx-10 laptop:mx-auto">
           <Sidebar />
-          <main className="h-max-[100%] md:mt-0 md:px-0 mt-6 flex h-[100%] min-w-0 flex-auto flex-col px-[5%]">
+          <main className="h-max-[100%] md:mt-0 md:px-0 mt-6 flex h-[100%] min-h-full min-w-0 flex-auto flex-col px-[5%]">
             {children}
             {/* <AnalyticsWrapper /> */}
           </main>
