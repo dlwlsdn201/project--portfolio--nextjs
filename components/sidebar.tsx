@@ -102,7 +102,7 @@ export default function Navbar() {
   return (
     <div id="aside-container" className={`${isScrolling ? 'aside-scrolling' : ''} px-[5%]`}>
       <aside className={`md:mx-0 md:h-[100%] md:w-[150px] md:flex-shrink-0 md:px-0 -mx-4 flex pt-[5%] font-serif`}>
-        <div className="lg:sticky lg:top-20">
+        <div className="laptop:sticky laptop:top-20">
           <div className="md:ml-[12px] md:mb-8 md:flex-row md:px-0 ml-2 mb-2 flex flex-col items-start space-y-10 px-4 ">
             <Logo />
           </div>
