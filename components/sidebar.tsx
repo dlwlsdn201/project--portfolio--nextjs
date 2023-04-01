@@ -37,7 +37,7 @@ function Logo() {
   return (
     <Link aria-label="LeeJinWoo's Portfolio" href="/">
       <motion.svg
-        className="h-[25px] text-black dark:text-white md:h-[37px]"
+        className="md:h-[37px] h-[25px] text-black dark:text-white"
         width="25"
         height="37"
         viewBox="0 0 232 316"
@@ -101,20 +101,20 @@ export default function Navbar() {
   }, []);
   return (
     <div id="aside-container" className={`${isScrolling ? 'aside-scrolling' : ''} px-[5%]`}>
-      <aside className={`-mx-4 flex pt-[5%] font-serif md:mx-0 md:h-[100%] md:w-[150px] md:flex-shrink-0 md:px-0`}>
+      <aside className={`md:mx-0 md:h-[100%] md:w-[150px] md:flex-shrink-0 md:px-0 -mx-4 flex pt-[5%] font-serif`}>
         <div className="lg:sticky lg:top-20">
-          <div className="ml-2 mb-2 flex flex-col items-start space-y-10 px-4 md:ml-[12px] md:mb-8 md:flex-row md:px-0 ">
+          <div className="md:ml-[12px] md:mb-8 md:flex-row md:px-0 ml-2 mb-2 flex flex-col items-start space-y-10 px-4 ">
             <Logo />
           </div>
           <nav
-            className="fade relative flex scroll-pr-6 flex-row items-start overflow-scroll px-4 pb-0 md:relative md:flex-col md:overflow-auto md:px-0"
+            className="fade md:relative md:flex-col md:overflow-auto md:px-0 relative flex scroll-pr-6 flex-row items-start px-4 pb-0"
             id="nav"
           >
-            <div className="mb-2 mt-2 flex flex-row space-x-0 pr-10 md:mt-0 md:flex-col">
+            <div className="md:mt-0 md:flex-col mb-2 mt-2 flex flex-row space-x-0 pr-10">
               {navItems[pathname] ? (
                 <>
                   {/* Desktop version, hidden on mobile, animates y axis */}
-                  <div className="hidden md:block">
+                  <div className="md:block hidden">
                     <motion.div
                       className="absolute z-[-1] h-[34px] rounded-md bg-neutral-100 dark:bg-neutral-800"
                       layoutId="test2"
@@ -133,7 +133,7 @@ export default function Navbar() {
                     />
                   </div>
                   {/* Mobile version, hidden on desktop, animates x axis */}
-                  <div className="block md:hidden">
+                  <div className="md:hidden block">
                     <motion.div
                       className={`${
                         isScrolling ? 'border border-dashed' : ''
