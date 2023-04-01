@@ -155,7 +155,7 @@ const skillsGrid = (dataObj) => (
       alignItems: 'center',
     }}
   >
-    <Grid container spacing={{ xs: 6, md: 4 }} columns={{ xs: 2, sm: 2, md: 4, lg: 4 }}>
+    <Grid container spacing={{ xs: 6, md: 4 }} columns={{ xs: 2, mobile: 2, md: 4, laptop: 4 }}>
       {dataObj.items.map((item, index) => (
         <Grid
           item
