@@ -8,11 +8,11 @@ export const revalidate = 60;
 export default async function HomePage() {
   return (
     <section className="section-home py-[4%]">
-      <strong className="font-serif text-lg font-bold md:text-3xl">{name}</strong>
-      <div className="my-5 max-w-[570px] text-neutral-800 dark:text-neutral-200">{about()}</div>
-      <div className="my-8 flex flex-col items-start md:flex-row md:items-center">
+      <strong className="md:text-3xl font-serif text-lg font-bold">{name}</strong>
+      <div className="my-5 text-neutral-800 dark:text-neutral-200">{about()}</div>
+      <div className="md:flex-row md:items-center my-8 flex flex-col items-start">
         <Image alt={name} className="rounded-full" src={avatar} placeholder="blur" width={100} priority />
-        <div className="mt-8 ml-0 space-y-2 text-neutral-500 dark:text-indigo-300 md:mt-0 md:ml-6">
+        <div className="md:mt-0 md:ml-6 mt-8 ml-0 space-y-2 text-neutral-500 dark:text-indigo-300">
           <a
             rel="noopener noreferrer"
             target="_blank"
@@ -42,8 +42,8 @@ export default async function HomePage() {
           </a>
         </div>
       </div>
-      <div className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-200">{bio()}</div>
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-500 dark:text-indigo-300 md:flex-row md:space-x-4 md:space-y-0">
+      <div className="my-5 text-neutral-800 dark:text-neutral-200">{bio()}</div>
+      {/* <ul className="font-sm md:flex-row md:space-x-4 md:space-y-0 mt-8 flex flex-col space-x-0 space-y-2 text-neutral-500 dark:text-indigo-300">
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-700 dark:hover:text-neutral-200"
@@ -55,7 +55,7 @@ export default async function HomePage() {
             <p className="ml-2 h-7">send to email</p>
           </a>
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 }
