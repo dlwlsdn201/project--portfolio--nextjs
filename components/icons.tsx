@@ -13,6 +13,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faBlog, faBriefcase, faCode, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
 import { SiTypescript, SiAntdesign } from 'react-icons/si';
+import { GiSkills } from 'react-icons/gi';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
@@ -80,8 +81,13 @@ export function GithubIcon(customOptions?: FontAwesomeIconProps): React.ReactEle
   return <FontAwesomeIcon icon={faGithub} size={'2xl'} {...customOptions} />;
 }
 
+// export function SkillStackIcon(): React.ReactElement {
+//   return <FontAwesomeIcon icon={faCode} size={customStyle.icon.about.badge.size} />;
+// }
+
 export function SkillStackIcon(): React.ReactElement {
-  return <FontAwesomeIcon icon={faCode} size={customStyle.icon.about.badge.size} />;
+  return <GiSkills size="24" />;
+  // return <FontAwesomeIcon icon={faCode} size={customStyle.icon.about.badge.size} />;
 }
 
 export function UserInfoIcon(): React.ReactElement {

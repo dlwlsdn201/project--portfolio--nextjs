@@ -75,14 +75,12 @@ const data: Array<TDataObj> = [
       {
         label: '주요 업무',
         content: (
-          <ul style={{ marginLeft: 10 }}>
-            <li>- 자사 솔루션 웹 애플리케이션 유지 보수</li>
+          <ul>
+            <li>- 자사 웹 애플리케이션 유지 보수</li>
 
-            <li>- 자사 솔루션 웹 애플리케이션 신규 기능 설계</li>
+            <li>- 자사 웹 애플리케이션 신규 기능 설계 및 개발</li>
 
-            <li>- 자사 솔루션 웹 애플리케이션 신규 기능 개발</li>
-
-            <li>- 신규 클라이언트 사이트 페이지 구축</li>
+            <li>- 자사 웹 애플리케이션 정식 릴리즈 배포</li>
 
             <li>- 팀 업무 일정 관리</li>
 
@@ -157,7 +155,7 @@ const skillsGrid = (dataObj) => (
       alignItems: 'center',
     }}
   >
-    <Grid container spacing={{ xs: 4, md: 3 }} columns={{ xs: 1, sm: 2, md: 4, lg: 4 }}>
+    <Grid container spacing={{ xs: 6, md: 4 }} columns={{ xs: 2, sm: 2, md: 4, lg: 4 }}>
       {dataObj.items.map((item, index) => (
         <Grid
           item
@@ -186,17 +184,17 @@ const skillsGrid = (dataObj) => (
 
 const commonGrid = (dataObj) =>
   dataObj.items.map((item) => (
-    <div className="grid auto-cols-fr grid-flow-col gap-2 px-3.5 py-2">
+    <div className="grid auto-cols-fr grid-flow-col gap-2 break-keep px-3.5  py-2 mobile:text-sm tablet:text-lg">
       <div className="label col-span-1 flex w-24 items-center p-1 font-bold">{item.label}</div>
-      <div className="content col-span-5 w-full p-1">{item.content}</div>
+      <div className="content col-span-5 w-full p-1 mobile:col-start-3">{item.content}</div>
     </div>
   ));
 
-const container = (data: TDataObj) => (
-  <div className=" border-grey relative border-2 px-2 py-4">
+const container = (data: TDataObj, idx: number) => (
+  <div className={`${idx === 0 && 'mt-8'} border-grey relative border-2 px-2 py-4`}>
     {data.type !== 'skills' ? commonGrid(data) : skillsGrid(data)}
     <div
-      className="title absolute left-2 -top-3 px-1.5"
+      className="title absolute -top-[24px] -left-[0px]"
       // style={{background: 'black'}}
     >
       {data.icon}
@@ -206,8 +204,8 @@ const container = (data: TDataObj) => (
 
 const Content = () => {
   return (
-    <div className="space-y-8 overflow-y-auto">
-      {data.map((dataObj: TDataObj) => container(dataObj))}
+    <div className="space-y-10 overflow-y-auto">
+      {data.map((dataObj: TDataObj, idx: number) => container(dataObj, idx))}
       {/* <div>
         <div className="scroll-more-info">
           <span></span>
