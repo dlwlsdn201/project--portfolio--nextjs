@@ -6,18 +6,18 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const navItems = {
-  '/': {
+const initialState = {
+  home: {
     name: 'home',
     x: 0,
     y: 0,
-    w: '3.8rem',
+    w: undefined,
   },
-  '/about': {
+  about: {
     name: 'about',
-    x: 60,
+    x: 64,
     y: 35,
-    w: '3.8rem',
+    w: undefined,
   },
   // '/blog': {
   // 	name: 'blog',
@@ -25,11 +25,11 @@ const navItems = {
   // 	y: 69,
   // 	w: '56px'
   // },
-  '/projects': {
-    name: 'Projects',
-    x: 120,
+  projects: {
+    name: 'projects',
+    x: 150,
     y: 69,
-    w: '4.5rem',
+    w: undefined,
   },
 };
 
@@ -37,7 +37,7 @@ function Logo() {
   return (
     <Link aria-label="LeeJinWoo's Portfolio" href="/">
       <motion.svg
-        className="md:h-[37px] h-[25px] text-black dark:text-white"
+        className="h-[25px] text-black dark:text-white tablet:h-[37px]"
         width="25"
         height="37"
         viewBox="0 0 232 316"
@@ -79,50 +79,95 @@ function Logo() {
 }
 
 export default function Navbar() {
-  let pathname = usePathname() || '/';
+  let pathname = usePathname() !== '/' ? usePathname().split('/')[1] : '/';
   const [isScrolling, setIsScrolling] = useState(false);
+  const [config, setConfig] = useState(initialState);
+
+  if (!pathname || pathname === '/') pathname = 'home';
+
+  useEffect(() => {
+    // nav link text 의 width 기준으로 motion div width 값 동적 정의
+    let homeTextWidth = 80;
+    let aboutTextWidth = 80;
+    let projectsTextWidth = 80;
+    if (document) {
+      const ElementHomeLink = document.querySelector('#home');
+      const ElementAboutLink = document.querySelector('#about');
+      const ElementProjectsLink = document.querySelector('#projects');
+
+      if (ElementHomeLink && ElementAboutLink && ElementProjectsLink) {
+        homeTextWidth = ElementHomeLink.clientWidth;
+        aboutTextWidth = ElementAboutLink.clientWidth;
+        projectsTextWidth = ElementProjectsLink.clientWidth;
+      }
+
+      setConfig({
+        home: {
+          ...config.home,
+          w: homeTextWidth,
+        },
+        about: {
+          ...config.about,
+          x: 16 + homeTextWidth,
+          w: aboutTextWidth,
+        },
+        projects: {
+          ...config.projects,
+          x: 32 + homeTextWidth + aboutTextWidth,
+          w: projectsTextWidth,
+        },
+      });
+    }
+  }, []);
 
   useEffect(() => {
     // sticky Header의 style 핸들링 코드
-    const rootContainer = document.querySelector('.root-container');
-    const handleScroll = () => {
-      if (rootContainer.scrollTop > 5) {
-        setIsScrolling(true);
-      } else {
-        setIsScrolling(false);
-      }
-    };
+    console.log('window.innerWidth:', window.innerWidth);
+    console.log('screen.width:', screen.width);
+    if (screen.width < 768) {
+      const rootContainer = document.querySelector('.root-container');
 
-    rootContainer.addEventListener('scroll', handleScroll);
+      const handleScroll = () => {
+        if (rootContainer.scrollTop > 5) {
+          setIsScrolling(true);
+        } else {
+          setIsScrolling(false);
+        }
+      };
+      rootContainer.addEventListener('scroll', handleScroll);
 
-    return () => {
-      rootContainer.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      return () => {
+        rootContainer.removeEventListener('scroll', handleScroll);
+      };
+    }
+    return () => false;
+  }, [window, screen.width]);
   return (
     <div id="aside-container" className={`${isScrolling ? 'aside-scrolling' : ''} px-[5%]`}>
-      <aside className={`md:mx-0 md:h-[100%] md:w-[150px] md:flex-shrink-0 md:px-0 -mx-4 flex pt-[5%] font-serif`}>
-        <div className="laptop:sticky laptop:top-20">
-          <div className="md:ml-[12px] md:mb-8 md:flex-row md:px-0 ml-2 mb-2 flex flex-col items-start space-y-10 px-4 ">
+      <aside
+        className={`-mx-4 flex pt-[5%] font-serif tablet:mx-0 tablet:h-[100%] tablet:w-[150px] tablet:flex-shrink-0 tablet:px-0`}
+      >
+        <div className="w-[100%] mobile:sticky mobile:top-20 tablet:relative tablet:top-0">
+          <div className="ml-2 mb-2 flex flex-col items-start space-y-10 px-4 tablet:ml-[12px] tablet:mb-8 tablet:flex-row tablet:px-0 ">
             <Logo />
           </div>
           <nav
-            className="fade md:relative md:flex-col md:overflow-auto md:px-0 relative flex scroll-pr-6 flex-row items-start px-4 pb-0"
+            className="fade relative flex scroll-pr-6 flex-row items-start px-4 pb-0 tablet:relative tablet:flex-col tablet:overflow-auto tablet:px-0"
             id="nav"
           >
-            <div className="md:mt-0 md:flex-col mb-2 mt-2 flex flex-row space-x-0 pr-10">
-              {navItems[pathname] ? (
+            <div className="mb-2 mt-2 flex flex-row space-x-0 pr-10 tablet:mt-0 tablet:flex-col">
+              {config[pathname] ? (
                 <>
                   {/* Desktop version, hidden on mobile, animates y axis */}
-                  <div className="md:block hidden">
+                  <div className="hidden tablet:block">
                     <motion.div
                       className="absolute z-[-1] h-[34px] rounded-md bg-neutral-100 dark:bg-neutral-800"
                       layoutId="test2"
-                      initial={{ opacity: 0, y: navItems[pathname].y }}
+                      initial={{ opacity: 0, y: config[pathname].y }}
                       animate={{
                         opacity: 1,
-                        y: navItems[pathname].y,
-                        // width: navItems[pathname].w
+                        y: config[pathname].y,
+                        // width: config[pathname].w
                         width: '60%',
                       }}
                       transition={{
@@ -133,17 +178,17 @@ export default function Navbar() {
                     />
                   </div>
                   {/* Mobile version, hidden on desktop, animates x axis */}
-                  <div className="md:hidden block">
+                  <div className="block tablet:hidden">
                     <motion.div
                       className={`${
                         isScrolling ? 'border border-dashed' : ''
                       } absolute z-[-1] h-[34px] rounded-md bg-neutral-100 dark:bg-neutral-800`}
                       layoutId="test"
-                      initial={{ opacity: 0, x: navItems[pathname].x }}
+                      initial={{ opacity: 0, x: config[pathname].x }}
                       animate={{
                         opacity: 1,
-                        x: navItems[pathname].x,
-                        width: navItems[pathname].w,
+                        x: config[pathname].x,
+                        width: config[pathname].w,
                       }}
                       transition={{
                         type: 'spring',
@@ -155,15 +200,15 @@ export default function Navbar() {
                 </>
               ) : null}
 
-              {Object.entries(navItems).map(([path, { name }]) => {
-                const isActive = path === pathname;
-
+              {Object.entries(config).map(([path, { name }]) => {
+                const isActive = `/${path}` === pathname || path === pathname;
                 return (
                   <Link
                     key={path}
-                    href={path}
+                    href={path === 'home' ? '/' : `/${path}`}
+                    id={path}
                     className={clsx(
-                      'py-[5px] px-[10px] transition-all hover:text-neutral-800 dark:hover:text-neutral-200',
+                      'py-[5px] px-[10px] transition-all hover:text-neutral-800 dark:hover:text-neutral-200 mobile:!mr-4 mobile:w-auto mobile:px-2',
                       {
                         'text-indigo-300': !isActive,
                         'font-bold': isActive,

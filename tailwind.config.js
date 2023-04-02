@@ -27,7 +27,7 @@ module.exports = {
     screens: {
       // min-width
       mobile: '320px',
-      tablet: '600px',
+      tablet: '768px',
       laptop: '1200px',
       desktop: '1536px',
     },

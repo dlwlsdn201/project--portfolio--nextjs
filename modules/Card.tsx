@@ -20,7 +20,11 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
   // };
 
   return (
-    <Card sx={{ maxWidth: 500, minHeight: 360 }} onClick={() => onClick()} style={{ cursor: 'pointer' }}>
+    <Card
+      // sx={{ maxWidth: 500, minHeight: 360 }}
+      onClick={() => onClick()}
+      style={{ cursor: 'pointer' }}
+    >
       <CardHeader
         avatar={
           <Avatar style={{ marginRight: '.2em' }} aria-label="recipe">
