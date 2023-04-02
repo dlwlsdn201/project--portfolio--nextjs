@@ -7,7 +7,7 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   return (
-    <section className="section-home py-[4%]">
+    <section className="section-home">
       <strong className="md:text-3xl font-serif text-lg font-bold">{name}</strong>
       <div className="my-5 text-neutral-800 dark:text-neutral-200">{about()}</div>
       <div className="md:flex-row md:items-center my-8 flex flex-col items-start">
