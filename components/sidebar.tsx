@@ -122,8 +122,6 @@ export default function Navbar() {
 
   useEffect(() => {
     // sticky Header의 style 핸들링 코드
-    console.log('window.innerWidth:', window.innerWidth);
-    console.log('screen.width:', screen.width);
     if (screen.width < 768) {
       const rootContainer = document.querySelector('.root-container');
 
