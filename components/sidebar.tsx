@@ -79,6 +79,10 @@ function Logo() {
 }
 
 export default function Navbar() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   let pathname = usePathname() !== '/' ? usePathname().split('/')[1] : '/';
   const [isScrolling, setIsScrolling] = useState(false);
   const [config, setConfig] = useState(initialState);
