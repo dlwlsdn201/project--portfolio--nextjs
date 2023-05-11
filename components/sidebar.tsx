@@ -123,19 +123,19 @@ export default function Navbar() {
   useEffect(() => {
     // sticky Header의 style 핸들링 코드
     if (screen.width < 768) {
-      const rootContainer = document.querySelector('.root-container');
+      const innerContainer = document.querySelector('.inner-container');
 
       const handleScroll = () => {
-        if (rootContainer.scrollTop > 5) {
+        if (innerContainer.scrollTop > 5) {
           setIsScrolling(true);
         } else {
           setIsScrolling(false);
         }
       };
-      rootContainer.addEventListener('scroll', handleScroll);
+      innerContainer.addEventListener('scroll', handleScroll);
 
       return () => {
-        rootContainer.removeEventListener('scroll', handleScroll);
+        innerContainer.removeEventListener('scroll', handleScroll);
       };
     }
     return () => false;
