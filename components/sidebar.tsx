@@ -122,7 +122,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // sticky Header의 style 핸들링 코드
-    if (screen.width < 768) {
+    if (document && screen?.width < 768) {
       const innerContainer = document.querySelector('.inner-container');
 
       const handleScroll = () => {
@@ -139,7 +139,7 @@ export default function Navbar() {
       };
     }
     return () => false;
-  }, [window, screen.width]);
+  }, [document, screen.width]);
   return (
     <div id="aside-container" className={`${isScrolling ? 'aside-scrolling' : ''} px-[5%]`}>
       <aside
