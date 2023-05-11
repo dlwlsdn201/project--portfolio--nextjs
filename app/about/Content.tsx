@@ -43,8 +43,8 @@ const data: Array<TDataObj> = [
         content: '울산광역시 중구 태화동 920-7',
       },
       {
-        label: '연락처',
-        content: '010-5159-7230',
+        label: 'E-mail',
+        content: 'dev.leejinw@gmail.com',
       },
     ],
   },
@@ -78,7 +78,9 @@ const data: Array<TDataObj> = [
           <ul>
             <li>- 자사 웹 애플리케이션 유지 보수</li>
 
-            <li>- 자사 웹 애플리케이션 신규 기능 설계 및 개발</li>
+            <li>- 자사 웹 애플리케이션 신규 기능 기획 및  설계</li>
+
+            <li>- 자사 웹 애플리케이션 신규 기능 기획 및  개발</li>
 
             <li>- 자사 웹 애플리케이션 정식 릴리즈 배포</li>
 
