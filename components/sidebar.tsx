@@ -139,7 +139,7 @@ export default function Navbar() {
       };
     }
     return () => false;
-  }, [document, screen.width]);
+  }, [screen.width]);
   return (
     <div id="aside-container" className={`${isScrolling ? 'aside-scrolling' : ''} px-[5%]`}>
       <aside
