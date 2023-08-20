@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "setup": "node ./lib/setup.mjs"
+    "setup": "node ./lib/setup.mjs",
+    "ts-node": "ts-node -r tsconfig-paths/register ./src/index.ts"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
@@ -33,6 +34,7 @@
     "contentlayer": "^0.3.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
+    "eslint-import-resolver-alias": "^1.1.2",
     "framer-motion": "^8.5.4",
     "fs": "^0.0.1-security",
     "kysely": "^0.23.4",
@@ -53,7 +55,10 @@
     "scroll-into-view-if-needed": "^3.0.6",
     "server-only": "^0.0.1",
     "shiki": "^0.13.0",
-    "swr": "^2.0.3"
+    "swr": "^2.0.3",
+    "terser-webpack-plugin": "^5.3.9",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
