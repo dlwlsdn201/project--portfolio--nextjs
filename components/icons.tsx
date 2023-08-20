@@ -11,8 +11,8 @@ import {
   faReact,
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
-import { faBlog, faBriefcase, faCode, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
-import { SiTypescript, SiAntdesign } from 'react-icons/si';
+import { faBlog, faBriefcase, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
+import { SiTypescript, SiAntdesign, SiTailwindcss, SiMui } from 'react-icons/si';
 import { GiSkills } from 'react-icons/gi';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
@@ -45,6 +45,9 @@ export function HTML5Icon(customOptions?): React.ReactElement {
 export function CSS3Icon(customOptions?): React.ReactElement {
   return <FontAwesomeIcon icon={faCss3} size={'2xl'} color="#3391C9" {...customOptions} />;
 }
+export function TailwindCSSIcon(customOptions?): React.ReactElement {
+  return <SiTailwindcss icon={SiTailwindcss} size="2em" color="#38BDF8" {...customOptions} />;
+}
 export function SASSIcon(customOptions?): React.ReactElement {
   return <FontAwesomeIcon icon={faSass} size={'2xl'} color="#C35D91" {...customOptions} />;
 }
@@ -52,7 +55,7 @@ export function JSIcon(customOptions?): React.ReactElement {
   return <FontAwesomeIcon icon={faJs} size={'2xl'} color="#E9D11A" {...customOptions} />;
 }
 export function MuiIcon(customOptions?): React.ReactElement {
-  return <MuiIcon color="007FFF" size="2em" {...customOptions} />;
+  return <SiMui color="066DD7" size="2em" {...customOptions} />;
 }
 
 export function AntdIcon(customOptions?): React.ReactElement {
