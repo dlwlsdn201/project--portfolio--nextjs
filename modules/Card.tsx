@@ -49,7 +49,12 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
         }
         subheader={data.workPeriod}
       />
-      <CardMedia component="img" height="194" image="../static/images/project-thumbnail.jpg" alt="thumbnail" />
+      <CardMedia
+        component="img"
+        height="194"
+        image={data?.thumbnail ?? '../static/images/project-thumbnail.jpg'}
+        alt="thumbnail"
+      />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {data.desc}

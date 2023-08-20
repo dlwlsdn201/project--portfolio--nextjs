@@ -10,4 +10,5 @@ export type entryType = {
   skills: skillType[];
   id: string;
   href: string;
+  thumbnail?: string;
 };
