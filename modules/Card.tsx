@@ -4,11 +4,9 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import { entryType, skillType } from 'types/projects';
 import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
 
@@ -18,13 +16,13 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
   // const handleExpandClick = () => {
   // 	setExpanded(!expanded);
   // };
-
   return (
     <Card
       // sx={{ maxWidth: 500, minHeight: 360 }}
       onClick={() => onClick()}
       style={{ cursor: 'pointer' }}
     >
+      {/* <div className="tooltip" data-tip={data.title}> */}
       <CardHeader
         avatar={
           <Avatar style={{ marginRight: '.2em' }} aria-label="recipe">
@@ -37,7 +35,7 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
             variant="h6"
             style={{
               fontSize: '1em',
-              maxWidth: '90%',
+              maxWidth: 'calc(100% - 50px)',
               whiteSpace: 'nowrap',
               wordBreak: 'keep-all',
               textOverflow: 'ellipsis',
@@ -49,9 +47,10 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
         }
         subheader={data.workPeriod}
       />
+      {/* </div> */}
       <CardMedia
         component="img"
-        height="194"
+        style={{ minHeight: '12rem' }}
         image={data?.thumbnail ?? '../static/images/project-thumbnail.jpg'}
         alt="thumbnail"
       />
