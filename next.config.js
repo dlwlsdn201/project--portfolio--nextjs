@@ -1,5 +1,6 @@
 const { get } = require('@vercel/edge-config');
 const { withContentlayer } = require('next-contentlayer');
+// const TerserPlugin = require('terser-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 // const path = require('path');
 // const glob = require('glob');
@@ -57,21 +58,21 @@ const nextConfig = {
     config.optimization = {
       ...config.optimization,
       minimize: isProduction ? true : false, // Development Mode일 때, Optimization 비활성화 (개발 모드 fash refresh 속도 느리기 때문)
-      minimizer: [
-        new TerserPlugin({
-          test: /\.(js|jsx|ts|tsx)$/,
-          parallel: true,
-          terserOptions: {
-            format: {
-              comments: false, // 빌드 시, comment 제거 (주석 제거)
-            },
-            compress: {
-              drop_console: true, // 빌드 시, console.* 구문 코드 제거
-            },
-          },
-          extractComments: false, // 주석을 별도의 파일로 추출할 지 여부
-        }),
-      ],
+      // minimizer: [
+      //   new TerserPlugin({
+      //     test: /\.(js|jsx|ts|tsx)$/,
+      //     parallel: true,
+      //     terserOptions: {
+      //       format: {
+      //         comments: false, // 빌드 시, comment 제거 (주석 제거)
+      //       },
+      //       compress: {
+      //         drop_console: true, // 빌드 시, console.* 구문 코드 제거
+      //       },
+      //     },
+      //     extractComments: false, // 주석을 별도의 파일로 추출할 지 여부
+      //   }),
+      // ],
     };
 
     return config;
