@@ -5,6 +5,7 @@ import {
   JSIcon,
   MuiIcon,
   NextJSIcon,
+  NextUiIcon,
   REACTIcon,
   SASSIcon,
   TailwindCSSIcon,
@@ -12,6 +13,20 @@ import {
 } from 'components/icons';
 
 export const rawData: entryType[] = [
+  {
+    title: '국내 수소 충전소 데이터 조회 서비스',
+    workPeriod: '2023.11 ~ 2024.01 (고도화 작업 중)',
+    desc: '공공 open API 기반으로 국내 수소 충전소 평균 판매 가격 현황, 충전소 정보 등의 데이터를 제공하는 서비스 웹 애플리케이션입니다.',
+    skills: [
+      TailwindCSSIcon({ size: 18 }),
+      NextUiIcon({ size: 18 }),
+      TSIcon({ size: 18 }),
+      NextJSIcon({ size: 22 }),
+    ],
+    id: '0',
+    href: 'https://project-recommend-recipes-nextjs-client.vercel.app/',
+    thumbnail: '../../static/images/projects/8.png',
+  },
   {
     title: 'openai API 를 이용한 음식 레시피 추천 서비스',
     workPeriod: '2023.06.01 ~ 2023.08.10',

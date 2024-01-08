@@ -25,18 +25,18 @@ export default function ModuleCard({ data, onClick }: { data: entryType; onClick
       {/* <div className="tooltip" data-tip={data.title}> */}
       <CardHeader
         avatar={
-          <Avatar style={{ marginRight: '.2em' }} aria-label="recipe">
+          <Avatar aria-label="recipe">
             {data?.titleIcon || <SourceOutlinedIcon />}
           </Avatar>
         }
-        style={{ textAlign: 'left', maxWidth: '100%', width: '100%', textOverflow: 'ellipsis' }}
+        style={{ textAlign: 'left', maxWidth: '100%', width: '100%' }}
         title={
           <Typography
             variant="h6"
             style={{
               fontSize: '1em',
-              maxWidth: 'calc(100% - 50px)',
-              whiteSpace: 'nowrap',
+              maxWidth: '100%',
+              whiteSpace: 'pre-wrap',
               wordBreak: 'keep-all',
               textOverflow: 'ellipsis',
               overflowX: 'hidden',

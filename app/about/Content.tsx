@@ -14,6 +14,8 @@ import {
   REACTIcon,
   SASSIcon,
   SkillStackIcon,
+  StyledComponentsIcon,
+  TailwindCSSIcon,
   UserInfoIcon,
 } from 'components/icons';
 import CircularStatic from 'modules/Progress';
@@ -40,7 +42,7 @@ const data: Array<TDataObj> = [
       },
       {
         label: '거주지',
-        content: '울산광역시 중구 태화동 920-7',
+        content: '울산광역시 중구 태화동',
       },
       {
         label: 'E-mail',
@@ -78,17 +80,17 @@ const data: Array<TDataObj> = [
           <ul>
             <li>- 자사 웹 애플리케이션 유지 보수</li>
 
-            <li>- 자사 웹 애플리케이션 신규 기능 기획 및  설계</li>
+            <li>- 자사 웹 애플리케이션 신규 기능 및 고도화 개발 기획 및 설계</li>
 
-            <li>- 자사 웹 애플리케이션 신규 기능 기획 및  개발</li>
+            <li>- 자사 웹 애플리케이션 신규 기능 및 고도화 개발</li>
 
-            <li>- 자사 웹 애플리케이션 정식 릴리즈 배포</li>
+            <li>- 자사 웹 애플리케이션 릴리즈 담당</li>
 
-            <li>- 팀 업무 일정 관리</li>
+            <li>- CI/CD pipelines 관리</li>
 
-            <li>- 팀 역량 강화 프로그램 관리</li>
+            <li>- git 백업 시스템 관리</li>
 
-            <li>- 프론트엔드 소스 코드 리뷰 관리</li>
+            <li>- 프론트엔드 소스 코드 리뷰 리드</li>
           </ul>
         ),
       },
@@ -111,8 +113,16 @@ const data: Array<TDataObj> = [
         content: <CircularStatic icon={SASSIcon()} label="SASS" value={60} />,
       },
       {
+        label: 'TailwindCSS',
+        content: <CircularStatic icon={TailwindCSSIcon()} label="Tailwind CSS" value={60} />,
+      },
+      {
+        label: 'styled-components',
+        content: <CircularStatic icon={StyledComponentsIcon()} label="Styled components" value={60} />,
+      },
+      {
         label: 'Ant Design',
-        content: <CircularStatic icon={AntdIcon()} label="Ant Design" value={70} />,
+        content: <CircularStatic icon={AntdIcon()} label="Ant Design" value={85} />,
       },
       {
         label: 'Material UI',
@@ -120,11 +130,11 @@ const data: Array<TDataObj> = [
       },
       {
         label: 'JavaScript',
-        content: <CircularStatic icon={JSIcon()} label="JavaScript" value={60} />,
+        content: <CircularStatic icon={JSIcon()} label="JavaScript" value={70} />,
       },
       {
         label: 'React',
-        content: <CircularStatic icon={REACTIcon()} label="React" value={65} />,
+        content: <CircularStatic icon={REACTIcon()} label="React" value={75} />,
       },
       {
         label: 'Figma',
@@ -132,15 +142,15 @@ const data: Array<TDataObj> = [
       },
       {
         label: 'Python',
-        content: <CircularStatic icon={PythonIcon()} label="Python" value={35} />,
+        content: <CircularStatic icon={PythonIcon()} label="Python" value={30} />,
       },
       {
         label: 'Bitbucket',
-        content: <CircularStatic icon={BitbucketIcon()} label="Bitbucket" value={60} />,
+        content: <CircularStatic icon={BitbucketIcon()} label="Bitbucket" value={80} />,
       },
       {
         label: 'Github',
-        content: <CircularStatic icon={GithubIcon()} label="Github" value={60} />,
+        content: <CircularStatic icon={GithubIcon()} label="Github" value={70} />,
       },
     ],
   },
